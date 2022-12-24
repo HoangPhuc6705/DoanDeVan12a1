@@ -2,123 +2,125 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Random</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ĐOÁN ĐỀ VĂN</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="title">
-    <h1>Gọi tên ngẫu nhiên</h1>
-  </div>
-  
-  <div class="main">
-
-    <!-- Group 1 -->
-    <table class="group">
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
-
-    <!-- Group 2 -->
-    <table  class="group">
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
-
-    <!-- Group 3 -->
-    <table  class="group">
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
-
-    <!-- Group 4 -->
-    <table  class="group">
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
-  </div>
-  <div class="random">
-    <!-- <div class="text">
-      <p>Click</p>
-    </div> -->
-    <button type="button">Bắt đầu</button>
-  </div>
-  <p class="cp">Bản quyền thuộc về Fmack</p>
+    <div class="container">
+        <h1>TỈ LỆ RA ĐỀ VĂN</h1>
+        <div class="text">
+            <p>Tây tiến</p>
+        </div>
+        <div class="text">
+            <p>Việt Bắc</p>
+        </div>
+        <div class="text">
+            <p>Đất Nước</p>
+        </div>
+        <div class="text">
+            <p>Sóng</p>
+        </div>
+        <div class="text">
+            <p>Người lái đò sông Đà</p>
+        </div>
+        <div class="text">
+            <p>Ai đã đặt tên cho dòng sông ?</p>
+        </div>
+        <button type="button">Bắt đầu</button>
+    </div>
 </body>
-<script type="module" src="script.js"></script>
+<script>
+    document.querySelector('button').onclick = () => {
+        document.querySelector('.container').style.display = 'none';
+        var result = [];
+        var max = 0;
+        setTimeout(() => {
+            const a =
+                `
+        <div class="main">
+
+        <div class="columnchart">
+            <div class="title">Tây Tiến</div>
+            <div class="chart">
+                <div class="animatechart">
+                    <p></p>
+                </div>
+                </div>
+        </div>
+
+        <div class="columnchart">
+            <div class="title">Việt Bắc</div>
+            <div class="chart">
+                <div class="animatechart">
+                    <p></p>
+                </div>
+                </div>
+        </div>
+
+        <div class="columnchart">
+            <div class="title">Đất Nước</div>
+            <div class="chart">
+                <div class="animatechart">
+                    <p></p>
+                </div>
+                </div>
+        </div>
+
+        <div class="columnchart">
+            <div class="title">Sóng</div>
+            <div class="chart">
+                <div class="animatechart">
+                    <p></p>
+                </div>
+                </div>
+        </div>
+
+        <div class="columnchart">
+            <div class="title">Người lái đò sông Đà</div>
+            <div class="chart">
+                <div class="animatechart">
+                    <p></p>
+                </div>
+                </div>
+        </div>
+
+        <div class="columnchart">
+            <div class="title">Ai đã đặt tên cho dòng sông ?</div>
+            <div class="chart">
+                <div class="animatechart">
+                    <p></p>
+                </div>
+                </div>
+        </div>
+
+        </div>
+        `;
+            document.querySelector('body').innerHTML = a;
+
+            for (let i = 0; i < 6; i++) {
+                result[i] = Math.floor(Math.random() * 99 + 1);
+                if (result[i] > max) {
+                    max = result[i];
+                }
+            }
+            for (let i = 0; i < 6; i++) {
+                document.querySelectorAll('.chart')[i].style.height = `${result[i]}%`;
+                document.querySelectorAll('.chart .animatechart')[i].style.height = `100%`;
+                document.querySelectorAll('.chart .animatechart')[i].style.animation = `column ${20 * (result[i] / 100)}s linear`;
+            }
+
+            var delay = 20000 * (max / 100) + 500;
+            setTimeout(() => {
+                for (i in result) {
+                    document.querySelectorAll('.chart .animatechart p')[i].innerHTML = `${result[i]}%`;
+                }
+            }, delay);
+        }, 500);
+    }
+</script>
+
 </html>

@@ -1,99 +1,115 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
-@font-face {
-  font-family: Quicksand;
-  src: url(./Quicksand/static/Quicksand-Bold.ttf);
-  font-weight: bold;
-}
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Quicksand';
-  color: white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Nunito', sans-serif;
 }
 
 body {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  min-height: 100vh;
-  flex-direction: column;
-  background: rgb(53, 53, 53);
-  position: relative;
+    background: linear-gradient(90deg, #12c2e9, #c471ed, #f64f59);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-.title {
-  cursor: context-menu;
-  text-transform: uppercase;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 15%;
-  width: 100%;
-  font-size: xx-large;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+h1 {
+    cursor: context-menu;
+}
+
+.text {
+    cursor: context-menu;
+    width: 350px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    cursor: pointer;
+    position: relative;
+    top: 100px;
+    padding: 15px 40px;
+    background: rgba(255, 255, 255, 0.3);
+    appearance: none;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+button:hover {
+    background: rgba(255, 255, 255, 0.6);
 }
 
 .main {
-
-  display: flex;
-  padding: 20px;
-  gap: 50px;
-  height: 75%;
-  width: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+.main .columnchart {
+    position: relative;
+    bottom: 20px;
+    width: 150px;
+    height: 95vh;
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 5px;
+}
+.main .title {
+    background: rgba(255, 255, 255, 0.3);
+    width: 100%;
+    height: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
 }
 
-.group tr td {
-  cursor: context-menu;
-  width: 200px;
-  height: 100px;
-  border: 2px solid white;
-  border-radius: 5px;
-  text-align: center;
-  padding: 10px;
-  font-size: 18px;
-  /* transition: 0.3s; */
+.main .chart {
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    align-items: flex-end;
+    /* border: 1px solid white; */
 }
 
-.random {
-  gap: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 15%;
-  width: 100%;
+.main .chart .animatechart {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.3);
 }
 
-.random .text {
-  /* border: 1px solid white; */
-  text-transform: uppercase;
-  font-size: 30px;
-  width: 100%;
-  height: 50px;
-  text-align: center;
+.main .chart .animatechart p {
+    position: absolute;
+    top: -20px;
+    font-size: 16px;
 }
 
-.random button {
-  font-weight: bolder;
-  font-size: 20px;
-  cursor: pointer;
-  padding: 15px 30px;
-  appearance: none;
-  outline: none;
-  background: none;
-  border: 2px solid white;
-  border-radius: 5px;
-}
-
-.random button:active {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.cp {
-  opacity: 0.3;
-  top: 5px;
-  left: 5px;
-  position: absolute;
-  font-size: 10px;
+@keyframes column {
+    0% {
+        height: 0%;
+    }
+    100% {
+        height: 100%;
+    }
 }
